@@ -6,6 +6,11 @@
 	<body>
 
 		<h1> Tu będą moje filmy</h1>
+		{% for movie in movies %}
+
+			<p> {{ movie.title }} </p>
+
+		{% endfor %}
 
 	</body>
 </html>
