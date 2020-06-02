@@ -5,12 +5,21 @@
 	</head>
 	<body>
 
-		<h1> Tu będą moje filmy</h1>
-		{% for movie in movies %}
+		{% if movies|length == 0 %}
+			<h2>Brak filmów</h2>
 
-			<p> {{ movie.title }} </p>
+		{% else %}
+			<h1> Ilość filmów w bazie danych: {{  movies|length }}</h1>
 
-		{% endfor %}
+			<h1> Tu będą moje filmy</h1>
+			{% for movie in movies %}
+
+				<p> {{ movie.title }} </p>
+
+			{% endfor %}
+
+		{% endif %}
+
 
 	</body>
 </html>
