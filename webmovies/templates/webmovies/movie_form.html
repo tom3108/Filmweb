@@ -11,23 +11,15 @@
 	</head>
 	<body>
 
-		{% if movies|length == 0 %}
-			<h2>Brak filmów</h2>
+		<form method="post" enctype="mu">
+			{% csrf_token %}
+			{{ form }}
 
-		{% else %}
-			<h1> Ilość filmów w bazie danych: {{  movies|length }}</h1>
+			<button type="submit">Add movie</button>
 
-			<h1> FILMWEB TM </h1>
-			{% for movie in movies %}
 
-				<h2> {{ movie.title }} </h2>
-
-				<p> {{ movie.descript}} </p>
-
-			{% endfor %}
-
-		{% endif %}
-
+		</form>
+			}
 
 	</body>
 </html>

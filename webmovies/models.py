@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Movie (models.Model):
 	title = models.CharField(max_length=80, blank=False, unique=True)
@@ -13,5 +14,9 @@ class Movie (models.Model):
 
 	def title_with_year(self):
 		return "{} ({})".format(self.title, self.year)
+
+	def get_absolute_url(self):
+		return reverse ('web-movie')
+		
 
 
