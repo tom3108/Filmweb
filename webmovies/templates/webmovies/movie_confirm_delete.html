@@ -1,3 +1,4 @@
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -11,15 +12,9 @@
 	</head>
 	<body>
 
-		<form method="post" enctype="mu">
-			{% csrf_token %}
-			{{ form }}
+		<h2> Are you sure you want to delete the post? "{{ object.title }}" </h2>
 
-			<button type="submit">Submit</button>
-
-
-		</form>
-			}
+		<button type="submit">Submit</button>
 
 	</body>
 </html>

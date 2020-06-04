@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.views.generic import (ListView,
-	CreateView
+	CreateView,
+	DetailView,
+	UpdateView, 
+	DeleteView
+
 	)
 from .models import Movie 
 
@@ -16,4 +20,13 @@ class MovieListView(ListView):
 class MovieCreateView(CreateView):
 	model = Movie 
 	fields = ['title', 'descript','year','premiere','poster']
+
+class MovieDetailView(DetailView):
+	model = Movie 
+
+class MovieUpdateView(UpdateView):
+	model = Movie 
+	fields = ['title', 'descript','year','premiere','poster']
+
+
 
